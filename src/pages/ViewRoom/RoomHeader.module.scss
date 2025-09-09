@@ -1,0 +1,179 @@
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+}
+.hotel-info {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  padding: 50px 0;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  background-color: #f0ecec;
+  .hotel-btn {
+    background: #a62c34;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #8b232b;
+    }
+  }
+
+  .address {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    a {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.booking-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 320px;
+    margin-left: 20px;
+    margin-top: 40px;
+    background: #f9f9f9;
+    padding: 8px;
+    .icon-lock {
+      height: 30px;
+      width: 30px;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+    .flag-btn {
+      display: flex;
+      width: 70px;
+      height: 30px;
+      justify-content: center;
+      padding: 10px;
+
+      background-color: #f9f9f9;
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+      }
+    }
+    .currency-btn {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 10px;
+      .currency-text {
+        display: block;
+        font-size: 12px;
+        color: #a62c34;
+        padding: 10px;
+      }
+    }
+  }
+  .input-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 320px;
+
+    label,
+    .date-picker {
+      width: 100%;
+      font-size: 20px;
+      color: #010000;
+      margin-bottom: 4px;
+      font-weight: 600;
+      border: none;
+      height: 100%;
+      cursor: pointer;
+      outline: none;
+    }
+    .input-wrapper,
+    .select-box {
+      width: 100%;
+      height: 50px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      border: 1px solid #aeadad;
+      background: #fff;
+      &:hover {
+        border: 2px solid #b96c6c;
+      }
+    }
+    input,
+    select {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .calendar-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #a62c34;
+    }
+  }
+
+  .icon-btn,
+  .flag-btn,
+  .currency-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: #a62c34;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: #8b232b;
+    }
+  }
+
+  .flag-btn {
+    font-size: 20px;
+  }
+
+  .currency-btn {
+    font-weight: bold;
+  }
+}

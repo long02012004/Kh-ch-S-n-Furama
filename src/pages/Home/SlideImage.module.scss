@@ -1,0 +1,48 @@
+.slideImg {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  gap: 10px;
+}
+
+.panel {
+  flex: 1;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s ease-in;
+
+  h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    background: rgba(2, 4, 4, 0.251);
+    padding: 15px;
+  }
+}
+
+.active {
+  flex: 5;
+
+  h3 {
+    opacity: 1;
+  }
+}

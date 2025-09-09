@@ -1,0 +1,120 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  margin: 90px 160px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  .title {
+    font-size: 1.8rem;
+    color: #c2a16d;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .divider {
+    display: flex;
+    gap: 5px;
+    justify-content: left;
+    .bell-icon {
+      color: #a73535;
+      font-size: larger;
+    }
+    .divider-line {
+      .booking-link {
+        color: #c2a16d;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #c2a16d;
+        }
+      }
+    }
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555e5f;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .phone-number,
+  .address {
+    color: #444;
+    margin-bottom: 15px;
+    .phone {
+      color: #c2a16d;
+      font-weight: bold;
+    }
+  }
+
+  .map-block {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555e5f;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
+
+.contact-form {
+  border-left: 1px solid #ccc;
+  padding-left: 2rem;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label {
+    margin: 0.5rem 0 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .input,
+  .textarea,
+  .select {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border 0.3s;
+
+    &:focus {
+      border: 1px solid #c49b3e;
+    }
+  }
+
+  .textarea {
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    background: none;
+    border: 1px solid #c49b3e;
+    padding: 0.6rem 1rem;
+    color: #c49b3e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #c49b3e;
+      color: #fff;
+    }
+  }
+}

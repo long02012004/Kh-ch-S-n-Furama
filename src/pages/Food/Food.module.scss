@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.default__frame {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container__food {
+  width: 1520px;
+  height: 100vh;
+  background-color: #ffffff;
+  .food-section {
+    background-color: #fefaf6;
+    padding-top: 80px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    &__header {
+      background: linear-gradient(
+        to bottom,
+        #cce5e1 20%,
+        #eaf8f6 40%,
+        #ffffff 100%
+      );
+    }
+
+    &__category {
+      padding-top: 14px;
+      font-size: 14px;
+      color: #00796b;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      padding-top: 10px;
+      display: inline-block;
+      max-width: 800px;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 400;
+      color: #005f56;
+      margin-bottom: 20px;
+    }
+
+    &__tab-menu {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      position: sticky;
+    }
+
+    &__tab {
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      color: #555;
+      position: relative;
+
+      &--active {
+        color: #7cdacf;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: #7cdacf;
+        }
+      }
+    }
+    &__tab:nth-child(2) {
+      color: #0b0d0d;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #0b0d0d;
+      }
+    }
+
+    &__description {
+      max-width: 800px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #0c897a;
+      &:nth-child(odd) {
+        text-indent: 0; /* Dòng lẻ không thụt */
+      }
+
+      &:nth-child(even) {
+        text-indent: 2em; /* Dòng chẵn thụt vào */
+      }
+    }
+  }
+  /* --- Café Indochine Section --- */
+  .restaurant-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0;
+    max-width: 1400px;
+    font-family: "Times New Roman", serif;
+
+    .restaurant__image {
+      flex: 2;
+
+      .carousel {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        &__track {
+          position: relative;
+          height: 100%;
+        }
+
+        &__img {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 80%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+          opacity: 0;
+          transform: translateX(-50%) scale(0.9);
+          transition: all 0.6s ease-in-out;
+        }
+
+        .activeSlide {
+          opacity: 1;
+          transform: translateX(-50%) scale(1);
+          z-index: 2;
+        }
+
+        .lastSlide {
+          opacity: 0.7;
+          transform: translateX(-110%) scale(0.9); // ló ra trái 10%
+          z-index: 1;
+        }
+
+        .nextSlide {
+          opacity: 0.7;
+          transform: translateX(10%) scale(0.9); // ló ra phải 10%
+          z-index: 1;
+        }
+
+        &__btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #fff;
+          border: none;
+          border-radius: 50%;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 5;
+          font-size: 20px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          transition: background 0.3s;
+
+          &:hover {
+            background: #eee;
+          }
+        }
+
+        .left {
+          left: 10px;
+        }
+
+        .right {
+          right: 10px;
+        }
+      }
+    }
+
+    .restaurant__content {
+      flex: 1;
+      text-align: left;
+      .restaurant__topic {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #07d3bf;
+      }
+      .coming-soon {
+        font-weight: 500;
+        color: #857f7f !important;
+      }
+      .restaurant__title {
+        font-size: 20px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        color: #26a59a;
+      }
+
+      .restaurant__desc {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+        color: #333;
+        text-align: justify;
+      }
+
+      .restaurant__actions {
+        margin-top: 20px;
+
+        .btn-reserve {
+          background-color: #3bb28a;
+          color: #fff;
+          padding: 12px 28px;
+          border-radius: 30px;
+          border: none;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #2e8b68;
+            transform: translateY(-2px);
+          }
+        }
+      }
+      .review__add {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 40px 0px;
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -30px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: #babdbd;
+        }
+
+        .review__text {
+          font-size: 16px;
+          color: #3d4241;
+          cursor: pointer;
+          transition: color 0.3s;
+          font-size: x-large;
+
+          &:hover {
+            color: #2e8b68;
+          }
+        }
+
+        .review__icon {
+          font-size: 30px;
+          color: #3d4241;
+          cursor: pointer;
+          transition: transform 0.3s;
+
+          &:hover {
+            color: #2e8b68;
+          }
+        }
+      }
+    }
+  }
+  .section2 {
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 120px;
+  }
+  .restaurant__image1 {
+    width: 700px;
+    margin-left: 40px;
+    margin-right: 40px;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+  }
+}
