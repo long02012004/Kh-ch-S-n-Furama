@@ -10,7 +10,13 @@ const Header = ({ isLoggedIn }) => {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     navigate("/login");
-    window.location.reload(); // hoặc bạn có thể truyền hàm setIsLoggedIn(false)
+  };
+  const handleClickLogin = () => {
+    navigate("/login");
+  };
+
+  const handleClickSignUp = () => {
+    navigate("/sign-up");
   };
   // đổi màu header khi cuộn
   useEffect(() => {
@@ -41,7 +47,7 @@ const Header = ({ isLoggedIn }) => {
             </Link>
           </div>
 
-         <div className={styles.header__nav}>
+          <div className={styles.header__nav}>
             <ul className={`${styles.nav} `}>
               <li className={styles.nav__item}>
                 <NavLink className={styles.nav__link} to="/home">
@@ -53,7 +59,7 @@ const Header = ({ isLoggedIn }) => {
                   Ẩm thực
                 </NavLink>
               </li>
-  
+
               <li className={styles.nav__item}>
                 <NavLink className={styles.nav__link} to="/blog">
                   Blog
@@ -91,7 +97,7 @@ const Header = ({ isLoggedIn }) => {
                 </span>
               </li>
             </ul>
-         </div>
+          </div>
           <div>
             {isLoggedIn ? (
               <>
@@ -128,21 +134,26 @@ const Header = ({ isLoggedIn }) => {
             ) : (
               <>
                 <li className={styles.nav__item}>
-                  <Link className={styles.nav__btn} to="/login">
+                  <button
+                    className={styles.nav__btn}
+                    onClick={handleClickLogin}
+                  >
                     Đăng nhập
-                  </Link>
+                  </button>
                 </li>
                 <li className={styles.nav__item}>
-                  <Link className={styles.nav__btn} to="/sign-up">
+                  <button
+                    className={styles.nav__btn}
+                    onClick={handleClickSignUp}
+                  >
                     Đăng ký
-                  </Link>
+                  </button>
                 </li>
               </>
             )}
           </div>
         </header>
       </div>
-    
     </>
   );
 };
