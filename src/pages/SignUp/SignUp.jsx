@@ -1,32 +1,40 @@
 import React, { useState } from "react";
 import { backgroundSignUp, flag, rocket } from "../../assets/images/img";
-import { Link,/*  useNavigate */ } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.scss";
-/* import { postLogin } from "../../services/ApiServices";
-import { toast } from "react-toastify"; */
+import { postLogin } from "../../services/AppService";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-/*   const navigate = useNavigate(); */
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    // Xử lý đăng ký tại đây (gọi API)
-    //submit api
-/*     let data = await postLogin(email, password);
-    if (data.data && data.data.EC === 0) {
-      toast.success(data.data.EM);
-      navigate("/");
+  // 🟢 Hàm xử lý submit form
+  const handleLogin = async (e) => {
+    e.preventDefault(); // ⛔ chặn reload trang mặc định của form
+
+    try {
+      let data = await postLogin(email, password);
+
+      if (data.data && data.data.EC === 0) {
+        toast.success(data.data.EM);
+        navigate("/"); // 👉 điều hướng về trang chủ khi login thành công
+        alert("Đăng nhập thành công: " + data.data.EM);
+      } else {
+        toast.error(data.data.EM);
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      toast.error("Có lỗi xảy ra khi đăng nhập!");
     }
-    if (data.data && data.data.EC !== 0) {
-      toast.error(data.data.EM);
-    } */
   };
 
   return (
     <div className={styles["signup-container"]}>
       <div className={styles["sign-up"]}>
+        {/* Hình ảnh bên trái */}
         <div className={styles["sign-up__image"]}>
           <img
             className={styles["sign-up__image-main"]}
@@ -35,6 +43,7 @@ const SignUp = () => {
           />
         </div>
 
+        {/* Nội dung bên phải */}
         <div className={styles["sign-up__content"]}>
           <div className={styles["sign-up__header"]}>
             <img
@@ -54,19 +63,22 @@ const SignUp = () => {
             />
           </h2>
 
+          {/* Nút login với Google */}
           <Link to="/home" className={styles["sign-up__google-link"]}>
             <button className={styles["sign-up__google-login"]}>
-              <i class="fa-brands fa-google"></i> Đăng nhập với Google
+              <i className="fa-brands fa-google"></i> Đăng nhập với Google
             </button>
           </Link>
 
+          {/* Separator */}
           <div className={styles["sign-up__separator"]}>
             <div className={styles["sign-up__separator-line"]}></div>
             <span className={styles["sign-up__or"]}>Hoặc</span>
             <div className={styles["sign-up__separator-line"]}></div>
           </div>
 
-          <form className={styles["sign-up__form"]}>
+          {/* 🟢 SỬA 1: thêm onSubmit={handleLogin} để chặn reload và gọi API */}
+          <form className={styles["sign-up__form"]} onSubmit={handleLogin}>
             <label htmlFor="email" className={styles["sign-up__label"]}>
               Email hoặc Số Điện Thoại
             </label>
@@ -78,9 +90,7 @@ const SignUp = () => {
               placeholder="Nhập Email hoặc số điện thoại"
               title="Vui lòng nhập email hoặc số điện thoại"
               value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <label htmlFor="password" className={styles["sign-up__label"]}>
@@ -95,9 +105,7 @@ const SignUp = () => {
                 placeholder="Nhập mật khẩu"
                 title="Vui lòng nhập mật khẩu"
                 value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className={styles["sign-up__password-icon"]}>
                 <i className="fa-solid fa-eye-slash"></i>
@@ -149,12 +157,12 @@ const SignUp = () => {
             </button>
           </form>
 
+          {/* 🟢 SỬA 2: bỏ onClick={handleLogin()} ở link "Đăng nhập" */}
           <p className={styles["sign-up__login-link"]}>
             Đã có tài khoản?{" "}
             <Link
               to="/log-in"
               className={styles["sign-up__login-link-anchor"]}
-              onClick={() => handleLogin()}
             >
               Đăng nhập
             </Link>
