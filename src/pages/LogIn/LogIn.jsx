@@ -5,7 +5,7 @@ import styles from "./Login.module.scss";
 const LogIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -16,7 +16,7 @@ const LogIn = () => {
   };
 
   return (
-   <div className={styles["login-container"]}>
+    <div className={styles["login-container"]}>
       <div className={styles["login-box"]}>
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
@@ -40,19 +40,25 @@ const LogIn = () => {
             />
             <label>Password</label>
           </div>
-          <button type="submit" className={styles["login-btn"]}>
+          <button
+            type="submit"
+            className={styles["login-btn"]}
+            onClick={() => handleSubmit()}
+          >
             Đăng Nhập
           </button>
         </form>
         <div className={styles["forgot-password"]}>
           <span>Quên mật khẩu</span>
           <span>
-            <Link to="/sign-up" className={styles["sign-up"]}>Đăng ký</Link>
+            <Link to="/sign-up" className={styles["sign-up"]}>
+              Đăng ký
+            </Link>
           </span>
         </div>
       </div>
-   </div>
+    </div>
   );
-}
+};
 
 export default LogIn;
