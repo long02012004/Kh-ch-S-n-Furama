@@ -160,10 +160,7 @@ const SignUp = () => {
           {/* 🟢 SỬA 2: bỏ onClick={handleLogin()} ở link "Đăng nhập" */}
           <p className={styles["sign-up__login-link"]}>
             Đã có tài khoản?{" "}
-            <Link
-              to="/log-in"
-              className={styles["sign-up__login-link-anchor"]}
-            >
+            <Link to="/log-in" className={styles["sign-up__login-link-anchor"]}>
               Đăng nhập
             </Link>
           </p>

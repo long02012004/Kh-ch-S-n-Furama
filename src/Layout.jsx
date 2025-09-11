@@ -9,6 +9,8 @@ import Profile from "./pages/Profile/Profile.jsx";
 import SignUp from "./pages/SignUp/SignUp.jsx";
 import ViewRoom from "./pages/ViewRoom/ViewRoom.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Layout = () => {
   return (
     <>
@@ -26,6 +28,20 @@ const Layout = () => {
         <Route path="login" element={<Login />} />
         <Route path="blog" element={<Blog />} />
       </Routes>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </>
   );
 };

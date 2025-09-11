@@ -1,18 +1,28 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.scss";
+import { toast } from "react-toastify";
+import { postLogin } from "../../services/AppService";
 
 const LogIn = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
     // Xử lý đăng nhập ở đây (gọi API, kiểm tra, ...)
     // Nếu thành công:
-    navigate("/");
+    e.preventDefault(); // ⛔ chặn reload trang mặc định của form
+
+    let data = await postLogin(email, password);
+    if (data.data && data.data.EC === 0) {
+      toast.success(data.data.EM);
+      navigate("/");
+    }
+    if (data.data && data.data.EC !== 0) {
+      toast.error(data.data.EM);
+    }
   };
 
   return (
@@ -22,28 +32,30 @@ const LogIn = () => {
         <form onSubmit={handleSubmit}>
           <div className={styles["user-box"]}>
             <input
-              type="text"
+              id="email"
+              type="email"
               required
-              title="name"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              title="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <label>Username</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div className={styles["user-box"]}>
             <input
+              id="password"
               type="password"
               required
               title="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
           </div>
           <button
-            type="submit"
             className={styles["login-btn"]}
             onClick={() => handleSubmit()}
+            
           >
             Đăng Nhập
           </button>
