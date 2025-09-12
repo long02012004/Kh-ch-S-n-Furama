@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer/Footer";
-import VideoHome from "../../assets/Video/videohome.mp4";
+import Footer from "../../../components/Footer/Footer";
+import VideoHome from "../../../assets/Video/videohome.mp4";
 import styles from "./Home.module.scss";
 import React from "react";
 import { useEffect } from "react";
@@ -19,7 +19,7 @@ import {
   profile2,
   profile3,
   profile4,
-} from "../../assets/images/img";
+} from "../../../assets/images/img";
 
 const Home = () => {
   useEffect(() => {

@@ -25,10 +25,10 @@ import {
   food21,
   food22,
   food23,
-} from "../../assets/images/img";
+} from "../../../assets/images/img";
 import Bars from "./Bars";
 import ExclusiveOffers from "./ExclusiveOffers";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../../components/Footer/Footer";
 const image1 = [food1, food2, food3, food4, food5, food6, food7, food8, food9];
 const image2 = [food10, food11, food12, food13, food14];
 const image3 = [food15, food16, food17, food18];

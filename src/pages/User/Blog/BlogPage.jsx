@@ -18,7 +18,7 @@ import {
   advertisement5,
   advertisement6,
   blogPhu,
-} from "../../assets/images/img";
+} from "../../../assets/images/img";
 const BlogPage = () => {
   return (
     <div className="wrapper">

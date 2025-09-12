@@ -12,7 +12,7 @@ import {
   hotel7,
   hotel8,
   hotel9,
-} from "../../assets/images/img";
+} from "../../../assets/images/img";
 
 const RoomSelection = () => {
   const roomsData = [

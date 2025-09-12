@@ -1,7 +1,7 @@
 import RoomHeader from "./RoomHeader";
 import styles from "./ViewRoom.module.scss";
 import RoomSelection from "./RoomSelection";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../../components/Footer/Footer";
 const ViewRoom = () => {
   return (
     <>

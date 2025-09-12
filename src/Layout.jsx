@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App.jsx";
-import Home from "./pages/Home/Home.jsx";
-import Blog from "./pages/Blog/BlogPage.jsx";
-import Offers from "./pages/Offers/OffersPage.jsx";
-import Food from "./pages/Food/Food.jsx";
-import Login from "./pages/LogIn/LogIn.jsx";
-import Profile from "./pages/Profile/Profile.jsx";
-import SignUp from "./pages/SignUp/SignUp.jsx";
-import ViewRoom from "./pages/ViewRoom/ViewRoom.jsx";
-import Contact from "./pages/Contact/Contact.jsx";
+import Home from "./pages/User/Home/Home.jsx";
+import Blog from "./pages/User/Blog/BlogPage.jsx";
+import Offers from "./pages/User/Offers/OffersPage.jsx";
+import Food from "./pages/User/Food/Food.jsx";
+import Login from "./pages/Auth/LogIn/LogIn.jsx";
+import Profile from "./pages//User/Profile/Profile.jsx";
+import SignUp from "./pages/Auth/SignUp/SignUp.jsx";
+import ViewRoom from "./pages/User/ViewRoom/ViewRoom.jsx";
+import Contact from "./pages/User/Contact/Contact.jsx";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Layout = () => {

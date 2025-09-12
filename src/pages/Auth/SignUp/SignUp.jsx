@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { backgroundSignUp, flag, rocket } from "../../assets/images/img";
+import { backgroundSignUp, flag, rocket } from "../../../assets/images/img";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.scss";
-import { postLogin } from "../../services/AppService";
+import { postLogin } from "../../../services/AppService";
 import { toast } from "react-toastify";
 
 const SignUp = () => {

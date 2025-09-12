@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FooterBlog.module.scss";
 
-import { logo } from "../../assets/images/img";
+import { logo } from "../../../assets/images/img";
 import { NavLink } from "react-router-dom";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoFacebook } from "react-icons/io5";

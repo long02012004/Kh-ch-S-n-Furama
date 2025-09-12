@@ -13,8 +13,8 @@ import {
   offers9,
   offers10,
   offers11,
-} from "../../assets/images/img";
-import Footer from "../../components/Footer/Footer";
+} from "../../../assets/images/img";
+import Footer from "../../../components/Footer/Footer";
 const OffersPage = () => {
   return (
     <div className={styles["landing-wrapper"]}>

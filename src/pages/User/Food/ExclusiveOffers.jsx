@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ExclusiveOffers.module.scss";
-import { food18, food19, food20 } from "../../assets/images/img";
+import { food18, food19, food20 } from "../../../assets/images/img";
 // Demo data (bạn có thể lấy từ API hoặc props)
 const offers = [
   {

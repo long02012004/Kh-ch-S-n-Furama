@@ -6,7 +6,7 @@ import {
   hotelmoi3,
   hotel5,
   house,
-} from "../../assets/images/img";
+} from "../../../assets/images/img";
 const images = [
   { src: hotelmoi1, title: "Không gian nghỉ dưỡng đẳng cấp" },
   { src: hotelmoi2, title: "Ẩm thực tinh hoa Á – Âu" },

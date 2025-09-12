@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RoomHeader.module.scss";
 import { FaLock } from "react-icons/fa";
-import { flag } from "../../assets/images/img";
+import { flag } from "../../../assets/images/img";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";

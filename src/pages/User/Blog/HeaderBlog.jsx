@@ -1,6 +1,6 @@
 import { Link, Outlet, NavLink } from "react-router-dom";
 import styles from "./HeaderBlog.module.scss";
-import { logo } from "../../assets/images/img";
+import { logo } from "../../../assets/images/img";
 import { FaSearch } from "react-icons/fa";
 
 const HeaderBlog = () => {

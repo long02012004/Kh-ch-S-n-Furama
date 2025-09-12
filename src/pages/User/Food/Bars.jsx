@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Bars.module.scss";
-import { bars1, bars2, bars3 } from "../../assets/images/img";
+import { bars1, bars2, bars3 } from "../../../assets/images/img";
 const Bars = () => {
   const bars = [
     {
