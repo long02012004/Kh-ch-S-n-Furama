@@ -1,34 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.default__frame {
-  max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 .container__food {
-  width: 1520px;
+  max-width: 1520px;
   height: 100vh;
   background-color: #ffffff;
   .food-section {
     background-color: #fefaf6;
-    padding-top: 80px;
     text-align: center;
     font-family: "Times New Roman", serif;
     &__header {
       background: linear-gradient(
         to bottom,
-        #cce5e1 20%,
+        #79c7ba 20%,
         #eaf8f6 40%,
         #ffffff 100%
       );
+    }
+    .default__frame {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 80px;
     }
 
     &__category {

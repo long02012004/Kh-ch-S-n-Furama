@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .signup-container {
   height: 100vh;
   display: flex;
@@ -26,17 +20,17 @@
 
 .sign-up__image {
   flex: 2;
-  background-color: #f3f3f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #f5f3f3;
   border-right: 2px solid #8a8787;
+  width: 100%;
+  height: 100%;
 }
 
 .sign-up__image-main {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* giữ nguyên toàn bộ ảnh */
+  object-position: center;
 }
 
 .sign-up__content {
@@ -161,15 +155,27 @@
   background-color: #f3f3f3;
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:focus {
+    border: 1px solid #9f2997;
+    background-color: #fff;
+  }
 }
 
 .sign-up__password-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
+  border: 1px solid transparent;
+  &:focus {
+    border: 1px solid #9f2997;
+    background-color: #fff;
+  }
 }
 
 .sign-up__password-wrapper .bx {
@@ -187,19 +193,21 @@
 
 .sign-up__checkbox {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 16px;
+  align-items: flex-end;
+  justify-content: flex-start;
   color: #000;
-  font-size: 12px;
+  gap: 10px;
 }
 
 .sign-up__checkbox-input {
   margin-top: 3px;
+  height: 16px;
+  width: 16px;
 }
 
 .sign-up__checkbox-label {
-  font-size: 12px;
+  font-size: 18px;
+  line-height: 16px;
 }
 
 .sign-up__submit {
@@ -230,12 +238,11 @@
   position: absolute;
   display: flex;
   width: 40px;
-  height: 100%;
-  border-left: 1px solid #ccc;
+  height: 99%;
   right: 0;
-  background: #c1b5b5;
+  
   i {
-    color: #030303;
+    color: #9f2997;
     font-size: 20px;
     cursor: pointer;
     width: 100%;

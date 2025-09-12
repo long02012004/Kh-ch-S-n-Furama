@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { backgroundSignUp, flag, rocket } from "../../../assets/images/img";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.scss";
-import { postLogin } from "../../../services/AppService";
+import { postSignUp } from "../../../services/AppService";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
@@ -10,17 +10,33 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
   // 🟢 Hàm xử lý submit form
   const handleLogin = async (e) => {
+    const isValidEmail = validateEmail(email);
+    if (!isValidEmail) {
+      toast.error("Invalid email");
+      return;
+    }
+
+    if (!password) {
+      toast.error("Invalid password");
+      return;
+    }
     e.preventDefault(); // ⛔ chặn reload trang mặc định của form
 
     try {
-      let data = await postLogin(email, password);
+      let data = await postSignUp(email, password, "New User");
 
       if (data.data && data.data.EC === 0) {
         toast.success(data.data.EM);
-        navigate("/"); // 👉 điều hướng về trang chủ khi login thành công
+        navigate("/Login"); // 👉 điều hướng về trang LogIn khi login thành công
         alert("Đăng nhập thành công: " + data.data.EM);
       } else {
         toast.error(data.data.EM);
@@ -160,7 +176,7 @@ const SignUp = () => {
           {/* 🟢 SỬA 2: bỏ onClick={handleLogin()} ở link "Đăng nhập" */}
           <p className={styles["sign-up__login-link"]}>
             Đã có tài khoản?{" "}
-            <Link to="/log-in" className={styles["sign-up__login-link-anchor"]}>
+            <Link to="/login" className={styles["sign-up__login-link-anchor"]}>
               Đăng nhập
             </Link>
           </p>

@@ -1,8 +1,3 @@
-.scrolled .header {
-  background: #9a9898 !important; // khi cuộn thành màu trắng
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 .header {
   width: 100%;
   display: flex;
@@ -54,6 +49,10 @@
     display: none;
   }
 }
+.scrolled {
+  background: #24abbd !important; // khi cuộn thành màu trắng
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
 .nav {
   display: flex;
@@ -83,7 +82,7 @@
     text-decoration: none;
     padding: 0 20px;
     display: block;
-    &:hover{
+    &:hover {
       color: aqua;
     }
     &::after {
@@ -99,7 +98,6 @@
     }
     &:hover::after {
       width: 100%;
-      
     }
   }
 

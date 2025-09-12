@@ -2,10 +2,15 @@
   font-family: Arial, sans-serif;
   color: #2d2d2d;
 }
+.landing-wrapper {
+  height: 80px;
+  background-color: rgb(116, 116, 116);
+}
 .offer-section {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+
   padding: 90px 20px 0px 20px;
   .title,
   .sub-title {

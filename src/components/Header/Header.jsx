@@ -35,8 +35,10 @@ const Header = ({ isLoggedIn }) => {
 
   return (
     <>
-      <div className={`header-container ${scrolled ? styles.scrolled : ""}`}>
-        <header className={styles.header}>
+      <div className={styles["header-container"]}>
+        <header
+          className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}
+        >
           <div className={styles.header__logo}>
             <Link to="/home">
               <img
